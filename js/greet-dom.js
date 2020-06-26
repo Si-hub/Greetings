@@ -37,7 +37,7 @@ function greetMe(){
     else if (language && userName === "Afrikaans"){
         return "Hallo!"
     }
-    message.innerHTML = language + namesGreeted;
+    message.innerHTML = language + userName;
     //console.log(namesGreeted);
 }
 
