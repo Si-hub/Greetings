@@ -56,3 +56,10 @@ body{
       margin: 0;
       
    }
+
+   .printHere{
+      color: #ec9e6a;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+   }

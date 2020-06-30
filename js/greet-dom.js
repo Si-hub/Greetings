@@ -5,48 +5,29 @@ const lang = document.querySelector('.language'); /* radio elememnt*/
 const greetCountElem = document.querySelector('.numberOfGreetings');
 const message = document.querySelector('.printHere');
 
+localStorage.setItem("name",JSON.stringify('namesGreeted'));
+var data = localStorage.getItem('namesGreeted') ? JSON.parse(localStorage.getItem('namesGreeted')) : {};
 
+var greete = greetings(data); 
 
 function greetMe(){
    
-    var checkRadioButton = document.querySelector('input[name="language"]:checked');
-    var language = checkRadioButton.value;
     var userName = nameElement.value /* name of the value entered as string */
+    var checkRadioButton = document.querySelector('input[name="language"]:checked');
+    if(checkRadioButton){
+        var language = checkRadioButton.value
 
-    var namesGreeted = [];
+        greete.greet(userName, language);
+        greetCountElem.innerHTML = greete.greetingsCounter();
 
-    namesGreeted.push(userName);
-    localStorage.setItem("name",JSON.stringify(namesGreeted))
-
-    if (namesGreeted[userName] === undefined){
-        namesGreeted++;
-        //add an entry for the user that was greeted in the Object Map
-        namesGreeted[userName] = 0;
-        localStorage.getItem("name");
-        //update the DOM to display the counter
-        //greetingsElem.innerHTML = greetingsCounter;
-       
-    }
-
-    if (language && userName === "English"){
-        return "Hello"
-    }
-    else if (language && userName === "Isixhosa"){
-        return "Molo"
-    }
-    else if (language && userName === "Afrikaans"){
-        return "Hallo!"
-    }
-    message.innerHTML = language + userName;
-    //console.log(namesGreeted);
+        message.innerHTML =  greete.greet(userName, language);
+    } 
+   
+    
 }
-
-
-greetBtn.addEventListener('click', greetMe);
-
 
 function resetMe(){
-
-
+    
 }
+greetBtn.addEventListener('click', greetMe);
 resetBtn.addEventListener('click', resetMe);
