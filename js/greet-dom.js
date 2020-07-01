@@ -5,7 +5,7 @@ const lang = document.querySelector('.language'); /* radio elememnt*/
 const greetCountElem = document.querySelector('.numberOfGreetings');
 const message = document.querySelector('.printHere');
 
-localStorage.setItem("name",JSON.stringify('namesGreeted'));
+
 var data = localStorage.getItem('namesGreeted') ? JSON.parse(localStorage.getItem('namesGreeted')) : {};
 
 var greete = greetings(data); 
@@ -19,10 +19,11 @@ function greetMe(){
 
         greete.greet(userName, language);
         greetCountElem.innerHTML = greete.greetingsCounter();
-
+        
         message.innerHTML =  greete.greet(userName, language);
+        localStorage.setItem("name",  JSON.stringify(greete.map()));
+        
     } 
-   
     
 }
 

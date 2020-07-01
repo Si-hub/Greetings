@@ -1,5 +1,5 @@
 function greetings(storage){
-    var object = storage;
+    var object = storage || {};
 
     function greet(name, language){
 
@@ -33,8 +33,8 @@ function greetings(storage){
         }
 
         var take = name.toLowerCase();   //convert all string typed in lower cases 
-        if(object[take] === undefined){  //"undefined" cause the value input is not yet typed 
-            object[take] = 0; 
+        if(object[take] === undefined){  //"undefined" if someone didnt put anything 
+            object[take] = 0;            // dont increase the counter
         }
         if(object[take] === 1){
 
