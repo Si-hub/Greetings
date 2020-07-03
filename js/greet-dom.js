@@ -22,13 +22,16 @@ function greetMe(){
         
         message.innerHTML =  greete.greet(userName, language);
         localStorage.setItem("name",  JSON.stringify(greete.map()));
+        document.getElementById("Name").value = "";
         
     } 
     
 }
 
 function resetMe(){
-    
-}
+    localStorage.clear() //empties the list or the local storage list 
+    greete.clean();
+    greetCountElem.innerHTML = 0; //make the localstorage to keep the data even if the refresh
+}                                  // button is clicked
 greetBtn.addEventListener('click', greetMe);
 resetBtn.addEventListener('click', resetMe);
