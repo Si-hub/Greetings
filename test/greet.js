@@ -3,6 +3,7 @@ function greetings(){
 
     function greet(name, language){
 
+
         if(!language){        //if language is not selected/checked then return name on string//
             return "Please select a language"
         } 

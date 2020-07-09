@@ -16,7 +16,8 @@
         </div>
         <div class="row">
             <span class="label-body">Name</span>
-            <input type="text" name="" value="" placeholder="enter a name here " class="theName" id="Name">
+            <input type="text" name="alphabetOnly" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" class="theName" id="Name">
+            
         </div>
         <div class="row">
             <input type="radio" name="language" class="language" value="IsiXhosa">
