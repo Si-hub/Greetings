@@ -1,11 +1,11 @@
 body{
    position: relative;
-   width: 100%;
-   max-width: 960px;
-   margin: 0 auto;
+   width: 300px;
+   height: 300px;
+   margin: 0 auto !important;
    padding: 0 0px;
    box-sizing: border-box;
-   background-color:#393939 ;
+   background-color:#393939;
    
 }
 .container h1{
