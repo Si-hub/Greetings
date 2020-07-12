@@ -1,28 +1,10 @@
 function greetings(){
     var object =  {};
  
-    
-
+  
     function greet(name, language){
-
-
-        if(!language){        //if language is not selected/checked then return name on string//
-            return "Please select a language"
-        } 
-
-        if (name !== "" && !isNaN(name)){     //if value typed in, is not equal to a string name or// 
-            if (language === "IsiXhosa"){
-                return "Nceda ufake igama lakho eli lilo" // is not a name but a number then return string name//
-            }
-            if (language === "English"){               // according to language checked//
-                return "Please put your name, not a number"
-            }
-            if (language === "Afrikaans"){
-                return "Plaas jou korrekte naam en nie nommer nie"
-            }
-        }; 
         
-        //if you forgot to type a name do the following//
+        //if you forgot to type a name but you did select a language do the following//
         if(!name){
             if (language === "IsiXhosa"){
                 return "Nceda ufake igama lakho" 
@@ -79,6 +61,7 @@ function greetings(){
         greetingsCounter,
         map,
         clean,
+        
     }
 }
 //steps for my "Greet" function:// 

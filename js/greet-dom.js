@@ -7,13 +7,20 @@ const message = document.querySelector('.printHere');
 
 
 var data = localStorage.getItem('namesGreeted') ? JSON.parse(localStorage.getItem('namesGreeted')) : {};
-
 var greete = greetings(data); 
+
 
 function greetMe(){
    
     var userName = nameElement.value /* name of the value entered as string */
     var checkRadioButton = document.querySelector('input[name="language"]:checked');
+    if( userName === "" && checkRadioButton === null){
+        message.innerHTML =  "please enter your name and select language"
+    }
+    if(userName !== "" && checkRadioButton === null){
+        message.innerHTML = "please select your language"
+    }
+
     if(checkRadioButton){
         var language = checkRadioButton.value
 
